@@ -22,8 +22,8 @@ https://docs.google.com/spreadsheets/d/19SLbCQLFKpkSaZ88SAmN_Mg8L8M-TkiB67TJD67l
 3. On your server (using your own URL):
 
 ```
-docker build -t tfa-bot https://git.factoid.org/TFA/TFA-Bot.git
-docker run --restart=always -d -e "BOTURL=https://docs.google.com/spreadsheets/d/123456789123456789123456789123456789/edit?usp=sharing" --name bot tfa-bot
+docker build -t consensusbot https://git.factoid.org/TFA/TFA-Bot.git
+docker run --restart=always -d -e "BOTURL=https://docs.google.com/spreadsheets/d/1D6QsKlXhJXN3HKxSxrLxi9gAvB5QfjP01nt9o-VvubU/edit?usp=sharing" --name bot consensusbot
 ```
 
 ##### Optional SIP Server, for Phone Call alerts
