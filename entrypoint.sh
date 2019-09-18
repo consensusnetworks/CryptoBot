@@ -1,9 +1,9 @@
 #!/bin/bash
 
 APP_NAME="TFA-Bot.exe"                                                                                                                                                                                                                                                         
-APP_DIR="/app/TFA-Bot/TFA-Bot/bin/Release"
-APP_DIR_DEBUG="/app/TFA-Bot/TFA-Bot/bin/Debug" 
-BUILD_DIR="/app/TFA-Bot"
+APP_DIR="/app/ConsensusBot/TFA-Bot/bin/Release"
+APP_DIR_DEBUG="/app/ConsensusBot/TFA-Bot/bin/Debug" 
+BUILD_DIR="/app/ConsensusBot"
 BUILD_CONF="Release"
 
 [ -z "$BOTURL" ] && echo "BOTURL Google Spreadsheet URL missing" && exit 1;
