@@ -19,7 +19,8 @@ RUN apt-get update \
     && apt-get -y install mono-devel
 
 RUN mkdir -p /app && git clone --branch v3.5.2 https://github.com/SIPp/sipp.git /app/sipp
-RUN ./app/sipp/build.sh
+WORKDIR /app/sipp
+RUN ./build.sh
 
 WORKDIR /app
 RUN git clone -b ${BRANCH} https://github.com/consensusnetworks/CryptoBot.git
