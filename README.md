@@ -22,7 +22,7 @@ https://docs.google.com/spreadsheets/d/19SLbCQLFKpkSaZ88SAmN_Mg8L8M-TkiB67TJD67l
 3. On your server (using your own URL):
 
 ```
-docker build -t consensusbot https://git.factoid.org/TFA/TFA-Bot.git
+docker build -t consensusbot https://github.com/consensusnetworks/CryptoBot.git
 docker run --restart=always -d -e "BOTURL=https://docs.google.com/spreadsheets/d/1D6QsKlXhJXN3HKxSxrLxi9gAvB5QfjP01nt9o-VvubU/edit?usp=sharing" --name bot consensusbot
 ```
 
