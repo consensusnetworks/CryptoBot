@@ -16,7 +16,7 @@ namespace TFABot.DiscordBot.Commands
 
         public void Run(MessageCreateEventArgs e)
         {
-            var cd = new clsColumnDisplay();
+            var cd = new ColumnDisplay();
 
             cd.AppendCol("Network");
             cd.AppendCol("Height");
@@ -35,7 +35,7 @@ namespace TFABot.DiscordBot.Commands
             e.Channel.SendMessageAsync($"```{cd.ToString()}```");
         }
 
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("networks", "", "Lists networks and their average blocktime");
         }

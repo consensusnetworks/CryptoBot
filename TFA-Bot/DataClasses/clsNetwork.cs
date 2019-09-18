@@ -108,7 +108,7 @@ namespace TFABot
             }
         }
 
-        public void AppendDisplayColumns(ref clsColumnDisplay columnDisplay)
+        public void AppendDisplayColumns(ref ColumnDisplay columnDisplay)
         {
             var sources = MonitoringSources;
 

@@ -24,7 +24,7 @@ namespace TFABot
                 ReadSheetSettings("Settings", sb);
                 ReadSheet<clsNotificationPolicy>("NotificationPolicy", Program.NotificationPolicyList, sb);
                 ReadSheet<clsNetwork>("Networks", Program.NetworkList, sb);
-                ReadSheet<clsUser>("Users", Program.UserList, sb);
+                ReadSheet<DiscordUser>("Users", Program.UserList, sb);
                 ReadSheet<clsNodeGroup>("NodeGroups", Program.NodeGroupList, sb);
 
                 ReadSheet<clsNode>("Nodes", Program.NodesList, sb);

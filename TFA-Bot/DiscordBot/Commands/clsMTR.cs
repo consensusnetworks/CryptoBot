@@ -76,7 +76,7 @@ namespace TFABot.DiscordBot.Commands
             }
         }
 
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("mtr", "<ip/host>", "Run mtr test.");
         }

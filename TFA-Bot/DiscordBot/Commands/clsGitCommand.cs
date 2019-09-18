@@ -40,12 +40,12 @@ namespace TFABot.DiscordBot.Commands
             message.Append("```");
 
 
-            if (msgSplit.Length > 1) message.AppendLine("\"bot update\" required to pull branch.");
+            if (msgSplit.Length > 1) message.AppendLine("`bot update` required to pull branch.");
 
             e.Channel.SendMessageAsync(message.ToString());
         }
 
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("git", "", "List branche(s)");
             columnDisplay.AppendCol("git", "<branch/commit>", "Checkout");

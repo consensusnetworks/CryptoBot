@@ -47,7 +47,7 @@ namespace TFABot
                 GetSetings();
                 if (Dialler == null)
                 {
-                    if (ChBotAlert == null) ChBotAlert = clsBotClient.Instance.Our_BotAlert;
+                    if (ChBotAlert == null) ChBotAlert = BotClient.Instance.Our_BotAlert;
                     ChBotAlert.SendMessageAsync("SIP not set up");
                     return;
                 }
@@ -59,7 +59,7 @@ namespace TFABot
                 var name = nameItem.ToLower();
                 if (!name.EndsWith("all"))
                 {
-                    clsUser user;
+                    DiscordUser user;
                     if (!Program.UserList.TryGetValue(name, out user))
                     {
                         user = Program.UserList.Values.FirstOrDefault(x => x.DiscordName.ToLower() == name || x.Name.ToLower() == name);

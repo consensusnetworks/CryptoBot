@@ -2,9 +2,9 @@
 
 namespace TFABot
 {
-    public class clsUser : ISpreadsheet<clsUser>
+    public class DiscordUser : ISpreadsheet<DiscordUser>
     {
-        public clsUser()
+        public DiscordUser()
         {
         }
 
@@ -28,7 +28,7 @@ namespace TFABot
         [ASheetColumnHeader("keyword")]
         public string[] KeywordAlert { get; set; }
 
-        public void Update(clsUser user)
+        public void Update(DiscordUser user)
         {
             if (DiscordName != user.DiscordName) throw new Exception("index name does not match");
 

@@ -110,7 +110,7 @@ namespace TFABot
                 var name = nameItem.ToLower();
                 if (!name.EndsWith("mail"))
                 {
-                    clsUser user;
+                    DiscordUser user;
                     if (!Program.UserList.TryGetValue(name, out user))
                     {
                         user = Program.UserList.Values.FirstOrDefault(x => x.DiscordName.ToLower() == name || x.Name.ToLower() == name);

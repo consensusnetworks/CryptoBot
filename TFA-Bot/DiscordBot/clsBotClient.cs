@@ -13,7 +13,7 @@ using static TFABot.Program;
 
 namespace DiscordBot
 {
-    public class clsBotClient : IDisposable
+    public class BotClient : IDisposable
     {
         public const ulong FactomServerID = 419201548372017163;
         public const ulong FactomOperatorAlertChannel = 443025488655417364;
@@ -34,9 +34,9 @@ namespace DiscordBot
 
         StringBuilder TextBuffer = new StringBuilder();
 
-        public static clsBotClient Instance = null;
+        public static BotClient Instance = null;
 
-        public clsBotClient(string Token)
+        public BotClient(string Token)
         {
             Instance = this;
 

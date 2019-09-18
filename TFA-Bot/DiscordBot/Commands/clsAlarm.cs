@@ -60,7 +60,7 @@ namespace TFABot.DiscordBot.Commands
                 e.Channel.SendMessageAsync($"Alarm State: {AlarmState.ToString()}");
         }
 
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("alarm", "", "Get state");
             columnDisplay.AppendCol("alarm on", "", "Active");

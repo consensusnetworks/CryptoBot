@@ -3,7 +3,7 @@ using System.Text;
 
 namespace TFABot
 {
-    public class clsColumnDisplay
+    public class ColumnDisplay
     {
         List<object> Lines = new List<object>();
         List<string> Columns = new List<string>();
@@ -18,7 +18,7 @@ namespace TFABot
         public char ColumnChar { get; set; } = '|';
 
 
-        public clsColumnDisplay(int margin = 1)
+        public ColumnDisplay(int margin = 1)
         {
             Margin = margin;
         }
@@ -49,7 +49,6 @@ namespace TFABot
             else if (ColumnMaxLen[Columns.Count - 1] < text.Length)
                 ColumnMaxLen[Columns.Count - 1] = text.Length;
         }
-
 
         public void AppendLine(string text = "")
         {

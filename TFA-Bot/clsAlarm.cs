@@ -86,7 +86,7 @@ namespace TFABot
                 }
                 Notes.Clear();
 
-                clsBotClient.Instance.Our_BotAlert.SendMessageAsync(sb.ToString());
+                BotClient.Instance.Our_BotAlert.SendMessageAsync(sb.ToString());
             }
         }
 
@@ -118,7 +118,7 @@ namespace TFABot
                             sb.AppendLine(line);
                         }
                         Notes.Clear();
-                        clsBotClient.Instance.Our_BotAlert.SendMessageAsync(sb.ToString());
+                        BotClient.Instance.Our_BotAlert.SendMessageAsync(sb.ToString());
                     }
                 }
             }
@@ -152,7 +152,7 @@ namespace TFABot
         {
             if (TimeDiscord.HasValue)
             {
-                clsBotClient.Instance.Our_BotAlert.SendMessageAsync(text);
+                BotClient.Instance.Our_BotAlert.SendMessageAsync(text);
             }
             else
             {

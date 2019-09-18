@@ -47,7 +47,7 @@ namespace TFABot.DiscordBot.Commands
             e.Channel.SendMessageAsync($"```{sb.ToString()}```");
         }
 
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("discord", "", "Display discord status");
         }

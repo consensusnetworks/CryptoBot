@@ -19,7 +19,7 @@ namespace TFABot.DiscordBot.Commands
             clsDialler.call(e);
         }
         
-        public void HelpString (ref clsColumnDisplay columnDisplay)
+        public void HelpString (ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("call","<user>");
         }

@@ -10,6 +10,6 @@ namespace TFABot.DiscordBot.Commands
         Regex[] MatchRegex { get; }
 
         void Run(MessageCreateEventArgs e);
-        void HelpString(ref clsColumnDisplay columnDisplay);
+        void HelpString(ref ColumnDisplay columnDisplay);
     }
 }

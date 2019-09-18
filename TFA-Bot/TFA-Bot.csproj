@@ -117,10 +117,6 @@
     <Compile Include="DiscordBot\Commands\clsListNodes.cs" />
     <Compile Include="DiscordBot\Commands\IBotCommand.cs" />
     <Compile Include="DiscordBot\Commands\clsUsers.cs" />
-    <Compile Include="DiscordBot\Commands\clsGoodAfternoon.cs" />
-    <Compile Include="DiscordBot\Commands\clsGoodnight.cs" />
-    <Compile Include="DiscordBot\Commands\clsSkyNet.cs" />
-    <Compile Include="DiscordBot\Commands\clsFembot.cs" />
     <Compile Include="DiscordBot\Commands\clsAlarm.cs" />
     <Compile Include="DiscordBot\clsBotClient.cs" />
     <Compile Include="DiscordBot\clsCommands.cs" />

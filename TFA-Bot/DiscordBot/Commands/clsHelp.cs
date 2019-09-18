@@ -25,14 +25,14 @@ namespace TFABot.DiscordBot.Commands
                 {
                     e.Channel.SendMessageAsync($"```{text}```");
                 }
-                e.Channel.SendMessageAsync($"Settings: {Program.BotURL}");
+                e.Channel.SendMessageAsync($"Settings: <{Program.BotURL}>");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("help");
         }

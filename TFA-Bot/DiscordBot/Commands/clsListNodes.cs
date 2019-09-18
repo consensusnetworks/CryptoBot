@@ -19,7 +19,7 @@ namespace TFABot.DiscordBot.Commands
             e.Channel.SendMessageAsync($"```{TFABot.Program.GetNodes()}```");
         }
 
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("nodes", "", "List nodes.");
         }

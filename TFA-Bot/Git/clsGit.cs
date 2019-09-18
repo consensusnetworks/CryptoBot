@@ -127,7 +127,7 @@ namespace TFABot.Git
         public new string ToString()
         {
             GetBranches();
-            var cd = new clsColumnDisplay();
+            var cd = new ColumnDisplay();
 
             cd.AppendCol("Branch");
             cd.AppendCol("Sha");

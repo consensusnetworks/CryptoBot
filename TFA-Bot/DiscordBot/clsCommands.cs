@@ -91,7 +91,6 @@ namespace TFABot.DiscordBot
                     foreach (var match in command.MatchSubstring) { MatchSubstring.Add((match, command)); }
                 if (command.MatchRegex != null)
                     foreach (var match in command.MatchRegex) { MatchRegex.Add((match, command)); }
-
             }
         }
 
@@ -99,32 +98,32 @@ namespace TFABot.DiscordBot
         {
             try
             {
-                var cd = new clsColumnDisplay
+                var columnDisplay = new ColumnDisplay
                 {
                     ColumnChar = ' '
                 };
 
-                cd.AppendLine($"The Factoid Authority Bot                          Uptime {(DateTime.UtcNow - Program.AppStarted).ToDHMDisplay() }");
-                cd.AppendCol("Command");
-                cd.AppendCol("Args");
-                cd.AppendCol("Description");
+                columnDisplay.AppendLine($"ConsensusBot                                      Uptime {(DateTime.UtcNow - Program.AppStarted).ToDHMDisplay() }");
+                columnDisplay.AppendCol("Command");
+                columnDisplay.AppendCol("Args");
+                columnDisplay.AppendCol("Description");
 
-                cd.AppendCharLine('-');
+                columnDisplay.AppendCharLine('-');
 
                 if (command != null)
                 {
-                    command.HelpString(ref cd);
+                    command.HelpString(ref columnDisplay);
                 }
                 else
                 {
                     foreach (var commandItem in MatchCommand.DistinctBy(x => x.Item2).OrderBy(x => x.Item1))
                     {
-                        commandItem.Item2.HelpString(ref cd);
-                        cd.NewLine();
+                        commandItem.Item2.HelpString(ref columnDisplay);
+                        columnDisplay.NewLine();
                     }
                 }
                 //cd.Append(Program.BotURL);
-                return cd.ToString();
+                return columnDisplay.ToString();
             }
             catch (Exception ex)
             {

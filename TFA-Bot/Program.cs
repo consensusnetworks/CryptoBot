@@ -23,7 +23,7 @@ namespace TFABot
         static uint AlarmOffWarningMinutes = 30;
 
         static public Dictionary<string, string> SettingsList = new Dictionary<string, string>();
-        static public Dictionary<string, clsUser> UserList = new Dictionary<string, clsUser>();
+        static public Dictionary<string, DiscordUser> UserList = new Dictionary<string, DiscordUser>();
         static public Dictionary<string, clsNetwork> NetworkList = new Dictionary<string, clsNetwork>();
         static public Dictionary<string, clsNode> NodesList = new Dictionary<string, clsNode>();
         static public Dictionary<string, clsNodeGroup> NodeGroupList = new Dictionary<string, clsNodeGroup>();
@@ -35,7 +35,7 @@ namespace TFABot
         static public ManualResetEvent ApplicationHold = new ManualResetEvent(false);
 
         static public clsSpreadsheet Spreadsheet;
-        static public clsBotClient Bot;
+        static public BotClient Bot;
 
         static public string BotURL { get; private set; }
         static public string BotName;
@@ -115,7 +115,7 @@ namespace TFABot
 
                 DateTime LastBotStart = DateTime.UtcNow;
                 int BotErrorCounter = 0;
-                using (Bot = new clsBotClient(DiscordToken))
+                using (Bot = new BotClient(DiscordToken))
                 {
                     Bot.RunAsync();
                     if (log.Contains("rror:")) Bot.SendAlert($"```{log}```");
@@ -146,7 +146,7 @@ namespace TFABot
                         }
                         else if (AlarmState == EnumAlarmState.Off && (DateTime.UtcNow - AlarmOffTime).TotalMinutes > (AlarmOffWarningMinutes * (AlarmOffWarningMultiplier + 1)))
                         {
-                            Bot.Our_BotAlert.SendMessageAsync($"Warning, the Alarm has been off {(DateTime.UtcNow - AlarmOffTime).TotalMinutes:0} minutes.  Forget to reset it?");
+                            Bot.Our_BotAlert.SendMessageAsync($"Warning! The alarm has been off {(DateTime.UtcNow - AlarmOffTime).TotalMinutes:0} minutes.  You might want to reset it.");
                             AlarmOffWarningMultiplier++;
                         }
 
@@ -162,7 +162,7 @@ namespace TFABot
                                 if (BotErrorCounter == 2) clsEmail.EmailAlertList("Bot: Discord not connected.");
                                 Bot._client.Dispose();
                                 LastBotStart = DateTime.UtcNow;
-                                Bot = new clsBotClient(DiscordToken);
+                                Bot = new BotClient(DiscordToken);
                                 Bot.RunAsync();
                             }
                         }
@@ -215,25 +215,25 @@ namespace TFABot
 
         static public string GetNodes()
         {
-            var cd = new clsColumnDisplay();
+            var columnDisplay = new ColumnDisplay();
 
-            cd.AppendCol("Node");
-            cd.AppendCol("Host");
-            cd.AppendCol("Ver");
-            cd.AppendCol("Height");
-            cd.AppendCol("Ave reply");
+            columnDisplay.AppendCol("Node");
+            columnDisplay.AppendCol("Host");
+            columnDisplay.AppendCol("Ver");
+            columnDisplay.AppendCol("Height");
+            columnDisplay.AppendCol("Ave reply");
 
-            cd.AppendCharLine('-');
+            columnDisplay.AppendCharLine('-');
 
             foreach (var group in NodeGroupList)
             {
                 foreach (var node in NodesList.Values.Where(x => x.Group == group.Key))
                 {
-                    node.AppendDisplayColumns(ref cd);
-                    cd.NewLine();
+                    node.AppendDisplayColumns(ref columnDisplay);
+                    columnDisplay.NewLine();
                 }
             }
-            return cd.ToString();
+            return columnDisplay.ToString();
         }
 
         static public void SetAlarmState(EnumAlarmState state, TimeSpan? timeout = null)

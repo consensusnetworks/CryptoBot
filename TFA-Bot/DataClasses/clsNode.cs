@@ -448,7 +448,7 @@ namespace TFABot
             return $"{Name}\t{Host}\t{LeaderHeight}\t{LatencyList.CurrentAverage.ToString().PadLeft(3)} ms ({(100 - PacketLoss.CurrentAverage):0.#}%) {ErrorMsg ?? ""}";
         }
 
-        public void AppendDisplayColumns(ref clsColumnDisplay columnDisplay)
+        public void AppendDisplayColumns(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol(Name ?? "?");
             columnDisplay.AppendCol(Host ?? "?");

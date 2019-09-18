@@ -28,7 +28,7 @@ namespace TFABot.Dialler
             Task task;
             try
             {
-                if (ChBotAlert == null) ChBotAlert = clsBotClient.Instance.Our_BotAlert;
+                if (ChBotAlert == null) ChBotAlert = BotClient.Instance.Our_BotAlert;
 
                 task = Task.Run(() =>
                 {

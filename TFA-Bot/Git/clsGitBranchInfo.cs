@@ -26,7 +26,7 @@ namespace TFABot.Git
         }
 
 
-        public void AppendDisplayColumns(ref clsColumnDisplay columnDisplay)
+        public void AppendDisplayColumns(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol((BranchRemote.FriendlyName));
             columnDisplay.AppendCol((BranchRemote.Tip.Sha.Substring(0, 7)));

@@ -63,7 +63,7 @@ namespace TFABot.DiscordBot.Commands
             }
 
         }
-        public void HelpString(ref clsColumnDisplay columnDisplay)
+        public void HelpString(ref ColumnDisplay columnDisplay)
         {
             columnDisplay.AppendCol("bot reload", "", "Reload spreadsheet (app settings require a restart).");
             columnDisplay.AppendCol("bot update", "", "Update to latest bot version (if available).");
