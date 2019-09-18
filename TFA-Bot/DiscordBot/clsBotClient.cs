@@ -169,7 +169,7 @@ namespace DiscordBot
                     {
                        Console.WriteLine($"Our Alert channel: {Our_BotAlert.Name}");
                        if (clsVersion.VersionChangeFlag)
-                         Bot.Our_BotAlert.SendMessageAsync($":drum: Welcome to version {clsGitHead.GetHeadToString()} :trumpet:");
+                         Bot.Our_BotAlert.SendMessageAsync($":drum: Welcome! (removing version number because it's causing it not to compile) :trumpet:");
                        else
                          Bot.Our_BotAlert.SendMessageAsync("Hello :innocent:");
                          
